@@ -1,0 +1,33 @@
+.btn {
+    width: 9.0625rem;
+    height: 3.25rem;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    @include font-primaria(1rem, 700);
+    text-transform: uppercase;
+    border-radius: 0.375rem;
+    transition: all 0.4s;
+
+    // @media ($mobile) {
+    //     width: 8.5rem;
+    //     height: 2.8125rem;
+    //     font-size: 1rem;
+    // }
+
+    &__primary {
+        background-color: $primary;
+        color: $text-primary;
+
+        @include mediaHover() {
+            &:hover {
+                border: 0.0625rem solid $primary;
+                color: $primary;
+                background-color: $text-primary;
+                transition: all 0.4s;
+            }
+        }
+    }
+}

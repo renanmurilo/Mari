@@ -1,0 +1,307 @@
+.banners {
+    width: 100%;
+
+    .banner__content {
+        width: 100%;
+        position: relative;
+
+        .banner__desktop {
+            width: 100%;
+
+            @include mobile() {
+                display: none;
+            }
+        }
+
+        .banner__mobile {
+            display: none;
+
+            @include mobile() {
+                display: block;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .banner__description {
+            position: absolute;
+            bottom: -2rem;
+            width: 33.75rem;
+            background-color: $primary;
+            padding: 2.5625rem 3.3125rem 2.5rem 2.125rem;
+            z-index: 1;
+
+            &::before {
+                content: "";
+                width: 9.125rem;
+                height: 9.125rem;
+                background-color: $primary;
+                border-radius: 100%;
+                left: -12rem;
+                position: absolute;
+                top: -1rem;
+            }
+
+            .banner__h1 {
+                @include font-primaria(2rem, 700);
+                color: $black;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.medicosEmpresas {
+    width: 100%;
+    position: relative;
+    background-color: $background-dark;
+
+    .medicosEmpresas__content {
+        width: 100%;
+        display: flex;
+        padding: 6.5rem 0 8.25rem;
+        position: relative;
+
+        .vetor {
+            position: absolute;
+            top: -0.7rem;
+            left: -3.5rem;
+        }
+
+        .medicosEmpresas__description {
+            width: 100%;
+            max-width: 35.75rem;
+
+            .medicosEmpresas__h2 {
+                @include title;
+                color: $primary;
+                margin-bottom: 1.5rem;
+            }
+
+            .medicosEmpresas__text {
+                width: 100%;
+                margin-bottom: 3.0625rem;
+
+                p {
+                    @include font-primaria;
+                    color: $white;
+                    margin-bottom: 1rem;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .medicosEmpresas__buttons {
+                display: flex;
+                gap: 0 1.5rem;
+
+                .btn__primary {
+                    &:first-child {
+                        width: 9.25rem;
+                    }
+                }
+            }
+        }
+
+        .medicosEmpresas__image {
+            position: absolute;
+            width: 100%;
+            max-width: 42.0625rem;
+            top: -4rem;
+            right: calc(50% - 44.5rem);
+            height: 28.375rem;
+
+            &::before {
+                content: "";
+                width: 32rem;
+                height: 0.75rem;
+                background-color: $primary;
+                position: absolute;
+                bottom: 0px;
+                right: 0;
+            }
+        }
+    }
+}
+
+.pagePacientes {
+    width: 100%;
+
+    .pagePacientes__content {
+        width: 100%;
+        padding: 6.9375rem 0 9rem;
+
+        .row__wrapper {
+            display: flex;
+            width: 100%;
+            position: relative;
+            align-items: flex-start;
+            height: 26.9375rem;
+            margin-bottom: 7.875rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &:nth-child(even) {
+                .image {
+                    right: -8.3rem;
+                    left: inherit;
+
+                    &::after {
+                        left: -1.25rem;
+                        right: inherit;
+                    }
+                }
+
+                .description {
+                    margin: 0 auto auto 0;
+                }
+            }
+
+            .image {
+                width: 100%;
+                max-width: 38.375rem;
+                height: 25.0625rem;
+                position: absolute;
+                left: -8.3rem;
+
+                &::before {
+                    content: "";
+                    width: 100%;
+                    height: 1.25rem;
+                    background-color: $primary;
+                    bottom: -0.625rem;
+                    left: 0;
+                    position: absolute;
+                }
+
+                &::after {
+                    content: "";
+                    width: 1.25rem;
+                    height: 9.75rem;
+                    background-color: $primary;
+                    bottom: -0.625rem;
+                    right: -1.25rem;
+                    position: absolute;
+                }
+
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                    height: 100%;
+                }
+            }
+
+            .description {
+                width: 100%;
+                max-width: 35.75rem;
+                margin: 0 0 auto auto;
+
+                .title__h2 {
+                    @include font-primaria(1.75rem, 700);
+                    color: $text-primary;
+                    margin-bottom: 1.5rem;
+                }
+
+                .text {
+                    width: 100%;
+                    margin-bottom: 1.5625rem;
+
+                    p {
+                        @include font-primaria;
+                        color: $text-primary;
+                        margin-bottom: 1rem;
+                        line-height: 1.25rem;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+
+                .btn__primary {
+                    width: max-content;
+                    padding: 0 1.5rem;
+
+                    @include mediaHover() {
+                        &:hover {
+                            width: max-content;
+                            padding: 0 1.5rem;
+                            color: $primary;
+                            border: 0.0625rem solid $primary;
+                            background-color: transparent;
+                            transition: all 0.4s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.procedimentos {
+    width: 100%;
+    background-color: $text-primary;
+
+    .procedimentos__content {
+        padding: 5.875rem 0 9.1875rem;
+        width: 100%;
+        display: flex;
+        position: relative;
+
+        &.active {
+            padding: 5.875rem 0 6.875rem;
+        }
+
+        .image {
+            position: absolute;
+            left: -8.3rem;
+            top: -5rem;
+            width: 100%;
+            max-width: 41.9375rem;
+            height: 28.375rem;
+
+            &::before {
+                content: "";
+                width: 32.25rem;
+                height: 0.75rem;
+                background-color: $primary;
+                position: absolute;
+                right: 0;
+                bottom: -0.375rem;
+            }
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                height: 100%;
+            }
+        }
+
+        .description {
+            width: 100%;
+            max-width: 32.125rem;
+            margin: auto 0 auto auto;
+
+            .procedimentos__h2 {
+                @include title;
+                color: $primary;
+                margin-bottom: 1.5rem;
+            }
+
+            .procedimentos__text {
+                width: 100%;
+                margin-bottom: 1.125rem;
+
+                p {
+                    @include font-primaria;
+                    color: $white;
+                    line-height: 1.25rem;
+                }
+            }
+        }
+    }
+}
